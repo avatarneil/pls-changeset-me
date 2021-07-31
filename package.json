@@ -1,6 +1,6 @@
 {
   "name": "pls-changeset-me",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Pre-commit hook which practically begs for you to generate a changeset if there are any changes",
   "keywords": [
     "pnpm",
@@ -9,7 +9,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "FIXME"
+    "url": "https://github.com/avatarneil/pls-changeset-me"
   },
   "license": "MIT",
   "author": "Neil Goldader",
