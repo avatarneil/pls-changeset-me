@@ -1,0 +1,16 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "eslint.options": { "ignorePath": ".gitignore" },
+  "eslint.validate": ["typescript"],
+  "prettier.disableLanguages": ["markdown"],
+  "[typescript]": {
+    "editor.formatOnSave": false
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
+}

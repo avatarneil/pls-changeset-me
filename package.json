@@ -1,0 +1,56 @@
+{
+  "name": "pls-changeset-me",
+  "version": "1.0.0",
+  "description": "Pre-commit hook which practically begs for you to generate a changeset if there are any changes",
+  "keywords": [
+    "pnpm",
+    "changeset",
+    "pre-commit"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "FIXME"
+  },
+  "license": "MIT",
+  "author": "Neil Goldader",
+  "main": "dist/index.js",
+  "bin": {
+    "pls-changeset-me": "./bin/please-changeset-me"
+  },
+  "files": [
+    "dist/",
+    "bin/"
+  ],
+  "scripts": {
+    "build": "tsc --listEmittedFiles",
+    "clean": "pnpm clean:only && pnpm install",
+    "clean:only": "git clean -fdX",
+    "preinstall": "npx only-allow pnpm",
+    "lint": "pnpm pnpm lint:eslint '**/*.ts' && pnpm lint:prettier '**/package.json'",
+    "lint:eslint": "eslint --ignore-path=.gitignore",
+    "lint:prettier": "prettier --check",
+    "prepare": "husky install",
+    "test": "pnpm lint"
+  },
+  "dependencies": {
+    "yargs": "16.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "14.14.31",
+    "@types/yargs": "16.0.0",
+    "@typescript-eslint/eslint-plugin": "4.15.2",
+    "@typescript-eslint/parser": "4.15.2",
+    "eslint": "7.21.0",
+    "eslint-config-prettier": "8.1.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-log": "1.2.7",
+    "eslint-plugin-prettier": "3.3.1",
+    "eslint-plugin-promise": "4.3.1",
+    "husky": "5.1.2",
+    "lint-staged": "10.5.4",
+    "prettier": "2.2.1",
+    "prettier-plugin-packagejson": "2.2.10",
+    "ts-node": "9.1.1",
+    "typescript": "4.2.2"
+  }
+}
