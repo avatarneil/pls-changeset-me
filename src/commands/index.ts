@@ -1,5 +1,5 @@
 // TODO: Actually import commands
 
-// import someCmd from './someCmd'
+import promptGeneration from './promptGeneration'
 
-// export default [someCmd]
+export default [promptGeneration]

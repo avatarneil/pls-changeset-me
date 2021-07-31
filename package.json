@@ -1,6 +1,6 @@
 {
   "name": "pls-changeset-me",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Pre-commit hook which practically begs for you to generate a changeset if there are any changes",
   "keywords": [
     "pnpm",
@@ -33,9 +33,16 @@
     "test": "pnpm lint"
   },
   "dependencies": {
+    "@changesets/git": "1.1.1",
+    "@changesets/parse": "0.3.8",
+    "@manypkg/get-packages": "1.1.1",
+    "@types/inquirer": "7.3.3",
+    "fs-extra": "10.0.0",
+    "inquirer": "8.1.2",
     "yargs": "16.2.0"
   },
   "devDependencies": {
+    "@types/fs-extra": "9.0.12",
     "@types/node": "14.14.31",
     "@types/yargs": "16.0.0",
     "@typescript-eslint/eslint-plugin": "4.15.2",
