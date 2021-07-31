@@ -1,5 +1,5 @@
 // TODO: Actually import commands
 
-import promptGeneration from './promptGeneration'
+import check from './check'
 
-export default [promptGeneration]
+export default [check]

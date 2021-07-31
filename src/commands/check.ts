@@ -71,10 +71,10 @@ const getChangedPackagesWithoutChangeset = async () => {
 /**
  * Prompts the user if there are any changed packages which do not yet have a changeset
  */
-export default function promptGeneration(yargs: Argv): Argv {
+export default function check(yargs: Argv): Argv {
   return yargs.command(
-    'promptGeneration',
-    'Run pnpm promptGeneration',
+    'check',
+    'Run pnpm check',
     argv =>
       argv.parserConfiguration({ 'unknown-options-as-args': true, 'greedy-arrays': false }).options({
         // Arg parser
@@ -84,7 +84,9 @@ export default function promptGeneration(yargs: Argv): Argv {
       const changedPackagesWithoutChangeset = await getChangedPackagesWithoutChangeset()
 
       if (changedPackagesWithoutChangeset.length > 0) {
-        console.log('It appears you may have changed packages which require a changeset! Would you like to create one?')
+        console.log(
+          'It appears you may have changed packages which require a changeset! Would you like to create one? 🥺 👉👈'
+        )
         console.log(
           `Changed packages without a changeset:\n ${changedPackagesWithoutChangeset.map(x => ` - ${x}`).join('\n')}`
         )
