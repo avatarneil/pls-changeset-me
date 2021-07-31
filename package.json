@@ -36,7 +36,6 @@
     "@changesets/git": "1.1.1",
     "@changesets/parse": "0.3.8",
     "@manypkg/get-packages": "1.1.1",
-    "@types/inquirer": "7.3.3",
     "fs-extra": "10.0.0",
     "inquirer": "8.1.2",
     "yargs": "17.0.1"
@@ -44,6 +43,7 @@
   "devDependencies": {
     "@changesets/cli": "2.16.0",
     "@types/fs-extra": "9.0.12",
+    "@types/inquirer": "7.3.3",
     "@types/node": "16.4.8",
     "@types/yargs": "17.0.2",
     "@typescript-eslint/eslint-plugin": "4.28.5",
