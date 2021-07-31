@@ -1,7 +1,7 @@
 {
   "name": "pls-changeset-me",
   "version": "0.0.2",
-  "description": "Pre-commit hook which practically begs for you to generate a changeset if there are any changes",
+  "description": "A package which practically begs for you to generate a changeset if there are any changes",
   "keywords": [
     "pnpm",
     "changeset",
@@ -42,6 +42,7 @@
     "yargs": "16.2.0"
   },
   "devDependencies": {
+    "@changesets/cli": "2.16.0",
     "@types/fs-extra": "9.0.12",
     "@types/node": "14.14.31",
     "@types/yargs": "16.0.0",

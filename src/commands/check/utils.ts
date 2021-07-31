@@ -1,14 +1,17 @@
-import type { Argv } from 'yargs'
 import * as git from '@changesets/git'
-import inquirer from 'inquirer'
 import parseChangeset from '@changesets/parse'
 import path from 'path'
 import fs from 'fs-extra'
+import { isString } from './typeguards'
 
-const isString = (x: unknown): x is string => typeof x === 'string'
-
+/**
+ * Reads changeset config
+ */
 const getConfig = async (cwd: string) => fs.readJSON(path.join(cwd, '.changeset', 'config.json'))
 
+/**
+ * Gets base branch from changeset config
+ */
 const getBaseBranch = async (cwd: string) => {
   try {
     const config = await getConfig(cwd)
@@ -30,11 +33,17 @@ const getBaseBranch = async (cwd: string) => {
   }
 }
 
+/**
+ * Gets names of all changed packages since baseBranch
+ */
 const getChangedPackageNames = async (cwd: string, baseBranch: string) => {
   const changedPackages = await git.getChangedPackagesSinceRef({ cwd, ref: baseBranch })
   return changedPackages.filter(a => a).map(pkg => pkg.packageJson.name)
 }
 
+/**
+ * Gets names of all packages with staged changesets (i.e. changesets in the current working branch that haven't been merged into the base branch)
+ */
 const getPackageNamesWithStagedChangesets = async (cwd: string, baseBranch: string) => {
   /**
    * Changesets that have been created since ref
@@ -56,7 +65,10 @@ const getPackageNamesWithStagedChangesets = async (cwd: string, baseBranch: stri
     .map(x => x.name)
 }
 
-const getChangedPackagesWithoutChangeset = async () => {
+/**
+ * Gets all packages which have changed that do not have a staged changeset
+ */
+export const getChangedPackagesWithoutChangeset = async (): Promise<string[]> => {
   const { cwd: getCwd } = process
   const cwd = getCwd()
   const baseBranch = await getBaseBranch(cwd)
@@ -68,42 +80,7 @@ const getChangedPackagesWithoutChangeset = async () => {
   return changedPackageNames.filter(x => !packageNamesWithStagedChangesets.includes(x))
 }
 
-/**
- * Prompts the user if there are any changed packages which do not yet have a changeset
- */
-export default function check(yargs: Argv): Argv {
-  return yargs.command(
-    'check',
-    'Run pnpm check',
-    argv =>
-      argv.parserConfiguration({ 'unknown-options-as-args': true, 'greedy-arrays': false }).options({
-        // Arg parser
-        // TODO: Add a fully headless mode that will always exit if there are any changesets that should be created..?
-      }),
-    async options => {
-      const changedPackagesWithoutChangeset = await getChangedPackagesWithoutChangeset()
-
-      if (changedPackagesWithoutChangeset.length > 0) {
-        console.log(
-          'It appears you may have changed packages which require a changeset! Would you like to create one? 🥺 👉👈'
-        )
-        console.log(
-          `Changed packages without a changeset:\n ${changedPackagesWithoutChangeset.map(x => ` - ${x}`).join('\n')}`
-        )
-
-        const { answer } = await inquirer.prompt({
-          type: 'confirm',
-          name: 'answer',
-          message: 'Create a changeset for these packages?'
-        })
-
-        if (answer) {
-          console.log('Exiting with error so changeset can be generated!')
-          process.exit(1)
-        }
-
-        process.exit(0)
-      }
-    }
+export const showChangedPackagesWithoutChangeset = (changedPackagesWithoutChangeset: string[]): void =>
+  console.log(
+    `Changed packages without a changeset:\n ${changedPackagesWithoutChangeset.map(x => ` - ${x}`).join('\n')}`
   )
-}
