@@ -1,5 +1,11 @@
 # pls-changeset-me
 
+## 0.0.9
+
+### Patch Changes
+
+- 4a9de96: Move @types/inquirer to devDependencies
+
 ## 0.0.8
 
 ### Patch Changes
