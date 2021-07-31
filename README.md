@@ -17,7 +17,7 @@ It's as simple as: `pnpx pls-changeset-me check`
 - You can use it as a pre-commit/pre-push hook with [husky](https://github.com/typicode/husky)!
   - Take a look at `.husky/pre-commit` for an example. Note the importance of including `exec < /dev/tty`, unless you want to run in headless mode (note: headless mode is _not_ recommended for pre-commit/pre-push hooks)!
 - You can use it straight from your command line by invoking with `pnpx`!
-- You can use it to block CI/CD (Jenkins, Codeship, Travis, you name it)! Simply supply the `-headless` (`-h`) parameter :)
+- You can use it to block CI/CD (Jenkins, Codeship, Travis, you name it)! Simply supply the `-headless` parameter :)
 
 ### Commands
 
