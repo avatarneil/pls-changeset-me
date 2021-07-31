@@ -2,6 +2,8 @@
 
 A script that will _plead_ for you to write [changesets](https://github.com/atlassian/changesets) for your changes.
 
+[![Codeship Status for avatarneil/pls-changeset-me](https://app.codeship.com/projects/1bbfbf3c-4875-486a-b6d9-b45bdc293726/status?branch=main)](https://app.codeship.com/projects/449901)
+
 ## Prerequisites
 
 - Repo with [changesets](https://github.com/atlassian/changesets)
