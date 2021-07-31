@@ -14,7 +14,6 @@ export default function check(yargs: Argv): Argv {
         // Arg parser
         // TODO: Add a fully headless mode that will always exit if there are any changesets that should be created..?
         headless: {
-          alias: 'h',
           description: 'Run in headless mode (will exit without prompt if a changeset should be created)',
           type: 'boolean',
           default: false

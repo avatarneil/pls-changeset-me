@@ -27,7 +27,7 @@ Checks for any staged changes which do not yet have a corresponding changeset. B
 
 ##### Options
 
-- `-headless`, `-h` -- Runs in a headless mode which will force-exit without user input if there have been any changes that may require a new changeset.
+- `-headless` -- Runs in a headless mode which will force-exit without user input if there have been any changes that may require a new changeset.
 
 ## Contributing
 

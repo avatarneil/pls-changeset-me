@@ -9,6 +9,6 @@ commands
     }
     return true
   })
-  .usage(`$0: CI commands for pnpm`)
+  .usage(`$0: Command to run`)
   .showHelpOnFail(true)
   .parse()
