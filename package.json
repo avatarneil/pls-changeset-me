@@ -1,6 +1,6 @@
 {
   "name": "pls-changeset-me",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A package which practically begs for you to generate a changeset if there are any changes",
   "keywords": [
     "pnpm",
@@ -15,7 +15,7 @@
   "author": "Neil Goldader",
   "main": "dist/index.js",
   "bin": {
-    "pls-changeset-me": "./bin/pls-changeset-me"
+    "pls-changeset-me": "./dist/index.js"
   },
   "files": [
     "dist/",
