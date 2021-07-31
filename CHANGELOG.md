@@ -1,5 +1,11 @@
 # pls-changeset-me
 
+## 0.0.7
+
+### Patch Changes
+
+- 4ddbddc: Update command help, remove -h alias
+
 ## 0.0.6
 
 ### Patch Changes
