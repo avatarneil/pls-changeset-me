@@ -1,7 +1,8 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-exec < /dev/tty
+exec < /dev/tty # !Important! Ensures that the script is not run in the background, so stdin is available.
+
 pnpx --no-install lint-staged
-pre-commit
 ts-node src/index.ts check
+pre-commit

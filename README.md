@@ -12,9 +12,20 @@ A script that will _plead_ for you to write [changesets](https://github.com/atla
 
 It's as simple as: `pnpx pls-changeset-me check`
 
-- You can use it as a pre-commit hook with [husky](https://github.com/typicode/husky)!
+- You can use it as a pre-commit/pre-push hook with [husky](https://github.com/typicode/husky)!
+  - Take a look at `.husky/pre-commit` for an example. Note the importance of including `exec < /dev/tty`, unless you want to run in headless mode (note: headless mode is _not_ recommended for pre-commit/pre-push hooks)!
 - You can use it straight from your command line by invoking with `pnpx`!
 - You can use it to block CI/CD (Jenkins, Codeship, Travis, you name it)! Simply supply the `-headless` (`-h`) parameter :)
+
+### Commands
+
+#### Check
+
+Checks for any staged changes which do not yet have a corresponding changeset. By default, prompts the user if they'd like to generate a changeset.
+
+##### Options
+
+- `-headless`, `-h` -- Runs in a headless mode which will force-exit without user input if there have been any changes that may require a new changeset.
 
 ## Contributing
 
