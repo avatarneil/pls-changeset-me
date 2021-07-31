@@ -1,5 +1,11 @@
 # pls-changeset-me
 
+## 0.0.8
+
+### Patch Changes
+
+- 9d5a96f: Bump all dependencies
+
 ## 0.0.7
 
 ### Patch Changes
