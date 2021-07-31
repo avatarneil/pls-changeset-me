@@ -3,3 +3,4 @@
 
 pnpx --no-install lint-staged
 pre-commit
+ts-node src/index.ts check
