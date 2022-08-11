@@ -1,5 +1,11 @@
 # pls-changeset-me
 
+## 0.0.10
+
+### Patch Changes
+
+- 37616b5: Bump all dependencies except node/inquirer (ESM blockers for inquirer bump)
+
 ## 0.0.9
 
 ### Patch Changes
