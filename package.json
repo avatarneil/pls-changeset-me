@@ -1,6 +1,6 @@
 {
   "name": "pls-changeset-me",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "A package which practically begs for you to generate a changeset if there are any changes",
   "keywords": [
     "pnpm",
