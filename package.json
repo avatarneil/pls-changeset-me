@@ -32,7 +32,7 @@
     "prepare": "husky install",
     "release": "pnpm build && pnpm changeset publish",
     "test": "pnpm lint",
-    "version-packages": "changeset version"
+    "version-packages": "pnpm changeset version"
   },
   "dependencies": {
     "@changesets/git": "1.4.1",
