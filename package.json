@@ -30,7 +30,9 @@
     "lint:eslint": "eslint --ignore-path=.gitignore",
     "lint:prettier": "prettier --check",
     "prepare": "husky install",
-    "test": "pnpm lint"
+    "release": "pnpm build && pnpm changeset publish",
+    "test": "pnpm lint",
+    "version-packages": "changeset version"
   },
   "dependencies": {
     "@changesets/git": "1.4.1",
