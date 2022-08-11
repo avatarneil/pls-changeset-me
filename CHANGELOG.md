@@ -1,5 +1,11 @@
 # pls-changeset-me
 
+## 0.0.11
+
+### Patch Changes
+
+- 6c0aa83: Set package privacy to public in changesets config
+
 ## 0.0.10
 
 ### Patch Changes
